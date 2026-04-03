@@ -20,6 +20,11 @@ from telegram.error import TimedOut, BadRequest
 
 nest_asyncio.apply()
 
+youtube_cookies = os.environ.get("YOUTUBE_COOKIES")
+if youtube_cookies:
+    with open("cookies.txt", "w", encoding="utf-8") as f:
+        f.write(youtube_cookies)
+
 # ================= КОНФІГУРАЦІЯ =================
 BOT_TOKEN = "8213254007:AAFQkGiQqi1YirAvF4VuGcF3CL6WpqFVSGA" # ВАШ ТОКЕН
 ADMINS_IDS = [1813590984] # ВАШ ID
